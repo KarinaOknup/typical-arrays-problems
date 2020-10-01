@@ -25,7 +25,7 @@ exports.max = function max (array) {
         }
         else{
           for  (let i = 0; i <= l; i++ ) {
-            if (max > array[i]) max = array[i];
+            if (max < array[i]) max = array[i];
           }
           return max ;
       }
