@@ -7,7 +7,7 @@ exports.min = function min (array) {
       return 0;
     }
     else{
-      for  (let i = 0; i <= l; i++ ) {
+      for  (let i = 0; i < l; i++ ) {
         if (min > array[i]) min=array[i];
       }
       return min;
@@ -24,7 +24,7 @@ exports.max = function max (array) {
           return 0;
         }
         else{
-          for  (let i = 0; i <= l; i++ ) {
+          for  (let i = 0; i < l; i++ ) {
             if (max < array[i]) max = array[i];
           }
           return max ;
@@ -35,10 +35,16 @@ exports.max = function max (array) {
 
 exports.avg = function avg (array) {
   if(Array.isArray(array)){//проверка на сущ-ние массива
-    let sum=0
-    for  (let i = 0; i <= array.length; i++ ) { 
+    let sum=0;
+    if(array.length === 0){
+      return 0;
+    } else {
+    for  (let i = 0; i < array.length; i++ ) { 
       sum+=array[i];
     }
-    return sum/array.length;
-}else return 0;
+    return (sum/(array.length));
 }
+  }
+else return 0;
+}
+
